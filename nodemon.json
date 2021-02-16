@@ -1,0 +1,7 @@
+{
+  "env": {
+    "MONGO_DB": "ml_challenge",
+    "MONGO_PASSWORD": "gC7VpTMHi1WG7Zmb",
+    "MONGO_USER": "read_and_write"
+  }
+}
