@@ -1,4 +1,5 @@
 const Category = require('../../models/category');
+const Picture = require('../../models/picture');
 const Product = require('../../models/product');
 const User = require('../../models/user');
 
@@ -7,10 +8,19 @@ const transformCategory = ({ _doc: category }) => ({
   parentCategory: category.parentCategory ? getCategoryById(category.parentCategory) : null
 });
 
+const transformPicture = ({ _doc: picture }) => ({
+  ...picture,
+  img: {
+    ...picture.img,
+    data: picture.img.data.toString('base64')
+  }
+});
+
 const transformProduct = ({ _doc: product }) => ({
   ...product,
   author: () => getUser(product.author),
-  category: () => getCategoryById(product.category)
+  category: () => getCategoryById(product.category),
+  pictures: () => getPictures(product.pictures)
 });
 
 const transformUser = ({ _doc: user }) => ({
@@ -23,6 +33,18 @@ const getCategoryById = async categoryId => {
     const category = await Category.findById(categoryId);
 
     return transformCategory(category);
+  } catch (err) {
+    throw err;
+  }
+};
+
+const getPictures = async pictureIds => {
+  try {
+    const pictures = await Picture.find({
+      _id: { $in: pictureIds }
+    });
+
+    return pictures.map(transformPicture);
   } catch (err) {
     throw err;
   }
@@ -51,8 +73,10 @@ const getUser = async userId => {
 };
 
 exports.getCategoryById = getCategoryById;
+exports.getPictures = getPictures;
 exports.getProducts = getProducts;
 exports.getUser = getProducts;
 exports.transformCategory = transformCategory;
+exports.transformPicture = transformPicture;
 exports.transformProduct = transformProduct;
 exports.transformUser = transformUser;

@@ -13,12 +13,25 @@ module.exports = buildSchema(`
     decimals: Int!
   }
 
+  type Image {
+    data: String!
+    contentType: String!
+  }
+
+  type Picture {
+    _id: ID!
+    name: String!
+    description: String!
+    alt: String!
+    img: Image!
+  }
+
   type Product {
     _id: ID!
     title: String!
     description: String!
     price: Price!
-    picture: String
+    pictures: [Picture!]!
     condition: String!
     free_shipping: Boolean!
     tags: [String!]!
@@ -55,7 +68,7 @@ module.exports = buildSchema(`
     title: String!
     description: String!
     price: PriceInput!
-    picture: String
+    pictures: [ID!]!
     condition: String!
     free_shipping: Boolean!
     tags: [String!]!

@@ -26,9 +26,10 @@ const productSchema = new Schema({
       required: true
     }
   },
-  picture: {
-    type: String
-  },
+  pictures: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Image'
+  }],
   condition: {
     type: String,
     required: true,
