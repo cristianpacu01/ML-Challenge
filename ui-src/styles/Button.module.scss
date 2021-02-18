@@ -1,0 +1,30 @@
+@import './constants';
+
+.button {
+  border: transparent;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px $dusty-gray;
+  cursor: pointer;
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  padding-block: 10px;
+
+  &.main-btn{
+    background-color: $dodger-blue;
+    color: $white;
+
+    &:hover {
+      background-color: $science-blue;
+    }
+  }
+
+  &.standard {
+    padding-inline: 60px;
+  }
+
+  &.centered {
+    margin: 0 auto;
+  }
+}
+

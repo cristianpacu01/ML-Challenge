@@ -1,0 +1,66 @@
+@import './constants';
+
+.list-item {
+  border-block-end: 1px solid $mercury;
+  color: $mine-shaft;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 0;
+  width: 100%;
+
+  &:hover {
+    text-decoration: none;
+    color: $mine-shaft;
+  }
+
+  &:last-child {
+    border: 0;
+  }
+
+  &--picture {
+    height: 150px;
+    margin: auto;
+    width: auto;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  &--content {
+    flex: 1;
+    min-width: 200px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  &--price {
+    display: flex;
+    flex-wrap: wrap;
+    margin-block-end: 20px;
+
+    p {
+      font-size: 20px;
+      font-weight: 400;
+      margin: 0;
+      margin-inline-end: 15px;
+      padding: 5px 0;
+    }
+
+    img {
+      height: 25px;
+      width: auto;
+      margin: auto 0;
+    }
+  }
+
+  &--description {
+    margin-block-end: 10px;
+
+    h4 {
+      font-size: 16px;
+      font-weight: 300;
+    }
+  }
+}

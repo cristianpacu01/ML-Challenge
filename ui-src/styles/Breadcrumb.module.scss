@@ -1,0 +1,42 @@
+@import './constants';
+
+.breadcrumb {
+  display: flex;
+  margin: 0 5px 5px;
+  position: relative;
+
+  &--arrow {
+    border-block-start: 1px solid $dusty-gray;
+    border-inline-end: 1px solid $dusty-gray;
+    display: inline-block;
+    height: 5px;
+    margin: auto;
+    position: relative;
+    width: 5px;
+    transform: rotate(45deg);
+  }
+
+  &--value {
+    color: $dusty-gray;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+    margin-inline-start: 10px;
+  }
+
+  &:first-child {
+    span.breadcrumb--arrow {
+      display: none;
+    }
+    p.breadcrumb--value {
+      margin: 0;
+    }
+  }
+
+  &:last-child {
+    p.breadcrumb--value {
+      font-weight: 600;;
+    }
+  }
+}

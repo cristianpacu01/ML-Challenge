@@ -1,0 +1,12 @@
+@import './constants';
+
+.layout {
+  min-width: 350px;
+  overflow: auto;
+
+  main {
+    background-color: $gallery;
+    min-height: 100vh;
+    padding: 16px;
+  }
+}

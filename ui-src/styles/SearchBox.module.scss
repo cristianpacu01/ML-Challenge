@@ -1,0 +1,49 @@
+@import './constants';
+
+.search-box {
+  align-items: center;
+  background-color: $white;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px $dusty-gray;
+  height: 40px;
+  margin: auto 10px;
+  padding: 5px 10px;
+  padding-inline-end: 0;
+  width: 90%;
+
+  form {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
+  &--input {
+    border: none;
+    border-inline-end: 1px solid $mercury;
+    flex: 1;
+    font-size: 18px;
+    height: 100%;
+    outline: none;
+    width: 100%;
+
+    &::placeholder {
+      color: $dusty-gray;
+    }
+  }
+
+  &--submit-btn {
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    width: 40px;
+  }
+
+  &--search-icon {
+    height: 65%;
+    margin: auto;
+    width: auto;
+  }
+}

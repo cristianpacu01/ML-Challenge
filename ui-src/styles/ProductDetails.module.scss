@@ -1,0 +1,77 @@
+@import './constants';
+
+.product-details {
+  width: 100%;
+  margin: auto;
+  max-width: 1000px;
+  position: relative;
+
+  &--content {
+    background-color: $white;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 15px;
+    position: relative;
+  }
+
+  &--carousel {
+    height: 50%;
+    margin: auto;
+    max-width: 680px;
+    min-width: 280px;
+    width: 50%;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &--product-info {
+    color: $mine-shaft;
+    display: block;
+    flex: 1;
+    min-width: 300px;
+    padding: 32px 20px;
+
+    .product-info {
+      &--title {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 16px 0 32px;
+      }
+
+      &--status {
+        font-size: 14px;
+        text-transform: capitalize;
+      }
+
+      &--price {
+        font-size: 46px;
+        font-weight: 300;
+        margin: 0 0 32px;
+      }
+    }
+  }
+
+  &--product-description{
+    font-size: 16px;
+    font-weight: 300;
+
+    &-container {
+      color: $dusty-gray;
+      margin-block-start: 50px;
+      max-width: 700px;
+      padding: 0 32px;
+      padding-block-end: 32px;
+      width: 100%;
+    }
+
+    &-title {
+      color: $mine-shaft;
+      font-size: 28px;
+      font-weight: 400;
+      margin: 32px 0;
+    }
+  }
+}

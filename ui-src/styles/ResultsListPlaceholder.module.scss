@@ -1,0 +1,36 @@
+@import './constants';
+
+.results-list-placeholder {
+  &--block {
+    background-color: $gallery;
+  }
+
+  &--list-item {
+    &-picture {
+      width: 149px;
+    }
+
+    &-price {
+      height: 30px;
+      margin-block-end: 30px;
+      max-width: 150px;
+    }
+
+    &-description {
+      height: 20px;
+      margin-block-end: 10px;
+
+      &__long {
+        width: 90%;
+      }
+
+      &__medium {
+        width: 60%;
+      }
+
+      &__short {
+        width: 35%;
+      }
+    }
+  }
+}

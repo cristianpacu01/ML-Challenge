@@ -1,0 +1,27 @@
+@import './constants';
+
+.header {
+  align-content: center;
+  background-color: $turbo;
+  display: flex;
+  justify-content: center;
+  min-height: 60px;
+  width: 100%;
+
+  &--logo {
+    height: 35px;
+    margin: auto 10px;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  &--content {
+    display: flex;
+    height: auto;
+    max-width: 1000px;
+    width: 100%;
+  }
+}
