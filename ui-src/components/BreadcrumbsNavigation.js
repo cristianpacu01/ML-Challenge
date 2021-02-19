@@ -10,4 +10,8 @@ const BreadcrumbsNavigation = ({ items }) => {
   )
 };
 
+BreadcrumbsNavigation.defaultProps = {
+  items: []
+};
+
 export default BreadcrumbsNavigation;

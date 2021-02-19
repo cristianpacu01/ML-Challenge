@@ -27,7 +27,7 @@ const ProductDetails = ({ productData, errors }) => {
   const getDescription = () => `${ productData.description }`;
   const getFormattedPrice = (price) => Intl.NumberFormat({style: 'currency', currency: 'COP'}).format(price);
   const getProductPrice = ({ amount, decimals, currency }) => `$${getFormattedPrice(amount)}${decimals ? `.${decimals}` : '' } ${currency}`;
-  const getProductStatus = () => `${productData.condition}${ productData.sold ? ` - ${productData.sold}` : '' }`;
+  const getProductStatus = () => `${productData.condition}${ productData.sold ? ` - ${productData.sold} vendidos` : '' }`;
   const getTitle = () => `${ productData.title } | Mercado Libre`;
   const getKeyWords = () => `${ productData.tags.join(', ') }`;
 
@@ -112,6 +112,7 @@ export const getServerSideProps = async (context) => {
           }
           condition
           free_shipping
+          sold
           tags
           category {
             name

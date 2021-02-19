@@ -1,7 +1,9 @@
-const Category = require('../../models/category');
-const Picture = require('../../models/picture');
-const Product = require('../../models/product');
-const User = require('../../models/user');
+const {
+  Category,
+  Picture,
+  Product,
+  User
+} = require('../../models');
 
 const transformCategory = ({ _doc: category }) => ({
   ...category,

@@ -7,4 +7,8 @@ const Breadcrumb = ({ value }) => (
   </li>
 );
 
+Breadcrumb.defaultProps = {
+  value: ''
+};
+
 export default Breadcrumb;

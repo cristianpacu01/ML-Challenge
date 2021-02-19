@@ -1,11 +1,11 @@
 import buttonStyles from '../styles/Button.module.scss';
 
 const Button = ({
-  center = false,
-  label = 'Continuar',
-  onClickHandler = () => {},
-  size = 'standard',
-  type = 'main-btn',
+  center,
+  label,
+  onClickHandler,
+  size,
+  type,
 }) => {
   return (
     <button
@@ -18,6 +18,14 @@ const Button = ({
       onClick={onClickHandler}
       >{ label }</button>
   );
+};
+
+Button.defaultProps = {
+  center: false,
+  label: 'Continuar',
+  onClickHandler: () => {},
+  size: 'standard',
+  type: 'main-btn'
 };
 
 export default Button;

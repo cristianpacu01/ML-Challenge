@@ -1,11 +1,12 @@
-const Product = require('../../models/product');
+const { Product } = require('../../models');
 const { transformProduct } = require('./merge');
 
 module.exports = ({
   createProduct: async ({ productInput }) => {
     try {
       const product = new Product({
-        ...productInput
+        ...productInput,
+        sold: Math.floor(Math.random()*400)
       });
 
       const savedProduct = await product.save();

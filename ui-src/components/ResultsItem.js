@@ -51,4 +51,14 @@ const ResultsItem = ({ item }) => {
   )
 };
 
+ResultsItem.defaultProps = {
+  item: {
+    _id: '',
+    pictures: [],
+    price: 0,
+    free_shipping: false,
+    title: ''
+  }
+};
+
 export default ResultsItem;

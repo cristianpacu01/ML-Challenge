@@ -3,7 +3,7 @@ const express = require('express');
 const fs = require('fs');
 const { graphqlHTTP } = require('express-graphql');
 const path = require('path');
-const Picture = require('./models/picture');
+const { Picture } = require('./models');
 const mongoose = require('mongoose');
 const multer = require('multer');
 

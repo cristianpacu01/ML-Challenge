@@ -7,7 +7,7 @@ import ResultsListPlaceholder from '../../components/ResultsListPlaceholder';
 
 const Results = () => {
   const router = useRouter();
-  const keywords = router.query?.['key-words'];
+  const keywords = router.query?.search;
 
   const [ results, setResults ] = useState([]);
   const [ isFetching, setIsFetching ] = useState(false);

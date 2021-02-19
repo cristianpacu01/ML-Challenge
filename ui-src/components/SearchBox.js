@@ -9,7 +9,7 @@ const SearchBox = () => {
             aria-label='Ingresa lo que quieras encontrar'
             placeholder='Nunca dejes de buscar'
             maxLength={120}
-            name='key-words'
+            name='search'
             required />
           <button
             className={searchBoxStyles['search-box--submit-btn']}

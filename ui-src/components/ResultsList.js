@@ -23,4 +23,9 @@ const ResultsList = ({ items, keywords }) => {
   )
 };
 
+ResultsList.defaultProps = {
+  items: [],
+  keywords: ''
+};
+
 export default ResultsList;

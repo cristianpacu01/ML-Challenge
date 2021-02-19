@@ -4,20 +4,20 @@ const model = mongoose.model;
 const Schema = mongoose.Schema;
 
 const imageSchema = new Schema({
-  name: {
-    type: String,
-    required: true
+  alt: {
+    type: String
   },
   description: {
     type: String,
     required: true
   },
-  alt: {
-    type: String
-  },
   img: {
     data: Buffer,
     contentType: String
+  },
+  name: {
+    type: String,
+    required: true
   }
 });
 

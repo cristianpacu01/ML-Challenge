@@ -8,43 +8,44 @@ module.exports = buildSchema(`
   }
 
   type Price {
-    currency: String!
     amount: Int!
+    currency: String!
     decimals: Int!
   }
 
   type Image {
-    data: String!
     contentType: String!
+    data: String!
   }
 
   type Picture {
     _id: ID!
-    name: String!
-    description: String!
     alt: String!
+    description: String!
     img: Image!
+    name: String!
   }
 
   type Product {
     _id: ID!
-    title: String!
-    description: String!
-    price: Price!
-    pictures: [Picture!]!
-    condition: String!
-    free_shipping: Boolean!
-    tags: [String!]!
-    category: Category!
     author: User!
+    category: Category!
+    condition: String!
+    description: String!
+    free_shipping: Boolean!
+    pictures: [Picture!]!
+    price: Price!
+    sold: Int
+    tags: [String!]!
+    title: String!
   }
 
   type User {
     _id: ID!
     addedProducts: [Product!]!
-    name: String!
-    lastName: String!
     email: String!
+    lastName: String!
+    name: String!
   }
 
   type LoginData {
@@ -59,35 +60,35 @@ module.exports = buildSchema(`
   }
 
   input PriceInput {
-    currency: String!
     amount: Int!
+    currency: String!
     decimals: Int!
   }
 
   input ProductInput {
-    title: String!
-    description: String!
-    price: PriceInput!
-    pictures: [ID!]!
-    condition: String!
-    free_shipping: Boolean!
-    tags: [String!]!
-    category: ID!
     author: ID!
+    category: ID!
+    condition: String!
+    description: String!
+    free_shipping: Boolean!
+    pictures: [ID!]!
+    price: PriceInput!
+    tags: [String!]!
+    title: String!
   }
 
   input UserInput {
-    name: String!
-    lastName: String!
     email: String!
+    lastName: String!
+    name: String!
     password: String!
   }
 
   type RootQuery {
     getCategoryById(categoryId: ID!): Category!
     getProducts: [Product!]!
-    getProductsByTag(keywords: String!): [Product!]!
     getProductById(productId: ID!): Product!
+    getProductsByTag(keywords: String!): [Product!]!
     login(email: String!, password: String!): LoginData!
   }
 

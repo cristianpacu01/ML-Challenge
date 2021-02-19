@@ -23,7 +23,12 @@
 
     img {
       height: 100%;
-      width: 100%;
+      left: 50%;
+      max-height: 450px;
+      position: relative;
+      transform: translateX(-50%);
+      width: auto;
+
     }
   }
 
@@ -47,7 +52,7 @@
       }
 
       &--price {
-        font-size: 46px;
+        font-size: 42px;
         font-weight: 300;
         margin: 0 0 32px;
       }

@@ -4,21 +4,37 @@ const model = mongoose.model;
 const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
-  title: {
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: 'Category'
+  },
+  condition: {
     type: String,
-    required: true
+    required: true,
   },
   description: {
     type: String,
     required: true
   },
+  free_shipping: {
+    type: Boolean,
+    required: true
+  },
+  pictures: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Image'
+  }],
   price: {
-    currency: {
-      type: String,
-      required: true
-    },
     amount: {
       type: Number,
+      required: true
+    },
+    currency: {
+      type: String,
       required: true
     },
     decimals: {
@@ -26,29 +42,16 @@ const productSchema = new Schema({
       required: true
     }
   },
-  pictures: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Image'
-  }],
-  condition: {
-    type: String,
-    required: true,
-  },
-  free_shipping: {
-    type: Boolean,
-    required: true
+  sold: {
+    type: Number
   },
   tags: [{
     type: String,
     required: true
   }],
-  category: {
-    type: Schema.Types.ObjectId,
-    ref: 'Category'
-  },
-  author: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
+  title: {
+    type: String,
+    required: true
   }
 });
 
